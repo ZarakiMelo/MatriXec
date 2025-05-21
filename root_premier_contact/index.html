@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matrix Challenge - Inscription</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f0f;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      color: #9c27b0;
+    }
+    form {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #9c27b0;
+      width: 320px;
+      margin-top: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+    input[type="text"], input[type="email"] {
+      font-size: 1rem;
+    }
+    button {
+      background-color: #9c27b0;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #7b1fa2;
+    }
+    .success-message {
+      color: #4caf50;
+      margin-top: 20px;
+      display: none;
+    }
+    .download-link {
+      margin-top: 20px;
+      display: none;
+      color: #9c27b0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Matrix Challenge - Formation Hacking Linux</h1>
+  <p>
+    Rejoins l'aventure immersive et gamifiée pour apprendre le hacking éthique Linux dans l’univers de Matrix.  
+    Inscris-toi pour recevoir le premier challenge en Docker à télécharger !
+  </p>
+
+  <form id="subscribe-form" action="https://formspree.io/f/mayvlkqw" method="POST">
+    <input type="text" name="name" placeholder="Ton prénom" required />
+    <input type="email" name="email" placeholder="Ton email" required />
+    <button type="submit">Recevoir le challenge</button>
+  </form>
+
+  <p class="success-message" id="success-message">
+    Merci pour ton inscription ! Clique ci-dessous pour télécharger le challenge :
+  </p>
+  <a class="download-link" id="download-link" href="matrix_challenge_premier_contact.zip" download>
+    Télécharger le challenge (ZIP)
+  </a>
+
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const successMessage = document.getElementById('success-message');
+    const downloadLink = document.getElementById('download-link');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+        downloadLink.style.display = 'inline-block';
+      } else {
+        alert('Oops, une erreur est survenue. Merci de réessayer.');
+      }
+    });
+  </script>
+
+</body>
+</html>

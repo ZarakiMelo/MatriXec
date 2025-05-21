@@ -6,7 +6,7 @@ RUN apt-get update && \
 # Copier les fichiers simulés
 COPY files/ /
 
-# Créer un utilisateur "sleeper" avec son home
+# Créer l'utilisateur sleeper
 RUN useradd -ms /bin/bash sleeper && \
     chown -R sleeper:sleeper /home/sleeper
 
@@ -16,5 +16,5 @@ WORKDIR /home/sleeper
 # Rendre le script exécutable
 RUN chmod +x /home/sleeper/unlock.sh
 
-# Exécuter le script unlock.sh au démarrage
-CMD ["/home/sleeper/unlock.sh"]
+# Exécuter le script unlock.sh au démarrage et garder le conteneur en vie
+CMD ["/bin/bash", "-i", "-c", "/home/sleeper/unlock.sh; exec /bin/bash"]

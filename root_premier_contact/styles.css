@@ -1,0 +1,319 @@
+:root {
+  --primary-color: #00ff00;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --card-background: rgba(0, 0, 0, 0.85);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Courier New', monospace;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.feature .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature h3 {
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.methodology {
+  margin: 3rem 0;
+}
+
+.methodology h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.methodology-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.methodology-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.methodology-item .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.methodology-item h3 {
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.demo-card {
+  background: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+  margin-bottom: 2rem;
+}
+
+.demo-card__primary {
+  padding: 1rem;
+}
+
+.demo-card__title {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.demo-card__subtitle {
+  color: var(--text-color);
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.demo-card__secondary {
+  padding: 0 1rem 1rem;
+  color: var(--text-color);
+}
+
+.mdc-chip-set {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.mdc-chip {
+  background: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.mdc-chip__text {
+  color: var(--primary-color) !important;
+}
+
+.mdc-linear-progress {
+  margin: 2rem 0;
+  --mdc-theme-primary: var(--primary-color);
+}
+
+.mdc-linear-progress__buffer {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 12px;
+}
+
+.mdc-linear-progress__bar {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  height: 12px;
+}
+
+.mdc-linear-progress__bar-inner {
+  border-radius: 10px;
+  height: 12px;
+}
+
+.mdc-switch {
+  margin: 2rem 0;
+  --mdc-theme-primary: var(--primary-color);
+}
+
+.mdc-slider {
+  margin: 2rem 0;
+  --mdc-theme-primary: var(--primary-color);
+}
+
+.mdc-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mdc-text-field {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.mdc-text-field__input {
+  color: var(--text-color) !important;
+}
+
+/* Styles pour les suggestions d'autocomplete */
+.mdc-text-field__input:-webkit-autofill,
+.mdc-text-field__input:-webkit-autofill:hover,
+.mdc-text-field__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-color) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--card-background) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.mdc-floating-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__trailing {
+  border-color: var(--border-color) !important;
+}
+
+.mdc-text-field--focused .mdc-notched-outline__leading,
+.mdc-text-field--focused .mdc-notched-outline__notch,
+.mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: var(--primary-color) !important;
+}
+
+.mdc-button {
+  background-color: var(--primary-color) !important;
+  color: var(--background-color) !important;
+  height: 48px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+}
+
+.mdc-button:hover {
+  background-color: #00cc00 !important;
+}
+
+.mdc-snackbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.mdc-snackbar__surface {
+  background: var(--card-background) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.mdc-snackbar__label {
+  color: var(--primary-color) !important;
+}
+
+/* Styles pour le bouton d'action du Snackbar */
+.mdc-snackbar__action {
+  height: 36px !important;
+  min-width: 64px !important;
+  padding: 0 8px !important;
+  margin-left: 8px !important;
+  font-size: 0.875rem !important;
+}
+
+.mdc-snackbar__action .mdc-button__label {
+  font-size: 0.875rem !important;
+  letter-spacing: 1px !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .features,
+  .methodology-items {
+    grid-template-columns: 1fr;
+  }
+
+  .mdc-chip-set {
+    justify-content: center;
+  }
+} 

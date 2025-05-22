@@ -3,111 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matrix Challenge - Inscription</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0f0f0f;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-    h1 {
-      color: #9c27b0;
-    }
-    form {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #9c27b0;
-      width: 320px;
-      margin-top: 20px;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-    }
-    input[type="text"], input[type="email"] {
-      font-size: 1rem;
-    }
-    button {
-      background-color: #9c27b0;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background-color: #7b1fa2;
-    }
-    .success-message {
-      color: #4caf50;
-      margin-top: 20px;
-      display: none;
-    }
-    .download-link {
-      margin-top: 20px;
-      display: none;
-      color: #9c27b0;
-      font-weight: bold;
-      text-decoration: none;
-    }
-  </style>
+  <title>MatriXec - Formation Hacking Éthique</title>
+  <!-- Material Design CDN -->
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <canvas id="matrix-rain"></canvas>
+  
+  <div class="container">
+    
+    <div class="content-card"><h1>MatriXec</h1>
+    <p class="subtitle">Formation Hacking Éthique</p>
+    
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1582266255765-fa5cf1a1d501?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hacker">
+    </div>
 
-  <h1>Matrix Challenge - Formation Hacking Linux</h1>
-  <p>
-    Rejoins l'aventure immersive et gamifiée pour apprendre le hacking éthique Linux dans l’univers de Matrix.  
-    Inscris-toi pour recevoir le premier challenge en Docker à télécharger !
-  </p>
+      <p>Tu veux apprendre le hacking éthique ? Tu es au bon endroit. Cette formation te permettra d'acquérir les bases nécessaires pour devenir un hacker éthique.</p>
+      <div class="features">
+        <div class="feature">
+          <span class="icon">🔒</span>
+          <h3>Sécurité offensive</h3>
+          <p>Apprends les techniques de hacking éthique</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🐧</span>
+          <h3>Linux</h3>
+          <p>Maîtrise le système d'exploitation des hackers</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🎯</span>
+          <h3>Challenges pratiques</h3>
+          <p>Mets en pratique tes connaissances</p>
+        </div>
+      </div>
 
-  <form id="subscribe-form" action="https://formspree.io/f/mayvlkqw" method="POST">
-    <input type="text" name="name" placeholder="Ton prénom" required />
-    <input type="email" name="email" placeholder="Ton email" required />
-    <button type="submit">Recevoir le challenge</button>
-  </form>
+      <div class="methodology">
+        <h2>Notre méthodologie</h2>
+        <div class="methodology-items">
+          <div class="methodology-item">
+            <span class="icon">📚</span>
+            <h3>Théorie</h3>
+            <p>Apprends les concepts fondamentaux</p>
+          </div>
+          <div class="methodology-item">
+            <span class="icon">💻</span>
+            <h3>Pratique</h3>
+            <p>Mets en application tes connaissances</p>
+          </div>
+          <div class="methodology-item">
+            <span class="icon">🎮</span>
+            <h3>Challenges</h3>
+            <p>Résous des challenges de plus en plus difficiles</p>
+          </div>
+        </div>
+      </div>
 
-  <p class="success-message" id="success-message">
-    Merci pour ton inscription ! Clique ci-dessous pour télécharger le challenge :
-  </p>
-  <a class="download-link" id="download-link" href="matrix_challenge_premier_contact.zip" download>
-    Télécharger le challenge (ZIP)
-  </a>
+      <!-- Features Section -->
+      <div class="content-card">
+        <h2>Ce que tu vas apprendre</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action">
+                <div class="demo-card__primary">
+                  <h3 class="demo-card__title">Linux</h3>
+                  <div class="mdc-linear-progress">
+                    <div class="mdc-linear-progress__buffer">
+                      <div class="mdc-linear-progress__buffer-bar"></div>
+                    </div>
+                    <div class="mdc-linear-progress__bar">
+                      <span class="mdc-linear-progress__bar-inner"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-card__secondary">
+                  Maîtrisez les commandes essentielles et l'administration système
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <script>
-    const form = document.getElementById('subscribe-form');
-    const successMessage = document.getElementById('success-message');
-    const downloadLink = document.getElementById('download-link');
+          <div class="feature">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action">
+                <div class="demo-card__primary">
+                  <h3 class="demo-card__title">Sécurité</h3>
+                  <div class="mdc-linear-progress">
+                    <div class="mdc-linear-progress__buffer">
+                      <div class="mdc-linear-progress__buffer-bar"></div>
+                    </div>
+                    <div class="mdc-linear-progress__bar">
+                      <span class="mdc-linear-progress__bar-inner"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-card__secondary">
+                  Découvrez les principes fondamentaux de la cybersécurité
+                </div>
+              </div>
+            </div>
+          </div>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+          <div class="feature">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action">
+                <div class="demo-card__primary">
+                  <h3 class="demo-card__title">Hacking</h3>
+                  <div class="mdc-linear-progress">
+                    <div class="mdc-linear-progress__buffer">
+                      <div class="mdc-linear-progress__buffer-bar"></div>
+                    </div>
+                    <div class="mdc-linear-progress__bar">
+                      <span class="mdc-linear-progress__bar-inner"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-card__secondary">
+                  Apprenez les techniques de hacking éthique
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      if (response.ok) {
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
-        downloadLink.style.display = 'inline-block';
-      } else {
-        alert('Oops, une erreur est survenue. Merci de réessayer.');
-      }
-    });
-  </script>
+      <form id="subscribe-form" method="POST" action="/subscribe" class="mdc-form">
+        <div class="mdc-text-field mdc-text-field--outlined" style="width: 100%;">
+          <input type="text" class="mdc-text-field__input" name="name" required>
+          <span class="mdc-notched-outline">
+            <span class="mdc-notched-outline__leading"></span>
+            <span class="mdc-notched-outline__notch">
+              <span class="mdc-floating-label">Ton prénom</span>
+            </span>
+            <span class="mdc-notched-outline__trailing"></span>
+          </span>
+        </div>
 
+        <div class="mdc-text-field mdc-text-field--outlined" style="width: 100%;">
+          <input type="email" class="mdc-text-field__input" name="email" required>
+          <span class="mdc-notched-outline">
+            <span class="mdc-notched-outline__leading"></span>
+            <span class="mdc-notched-outline__notch">
+              <span class="mdc-floating-label">Ton email</span>
+            </span>
+            <span class="mdc-notched-outline__trailing"></span>
+          </span>
+        </div>
+
+        <button class="mdc-button mdc-button--raised" type="submit">
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">Commencer l'aventure</span>
+        </button>
+      </form>
+
+      <!-- Snackbar pour les messages de succès -->
+      <div class="mdc-snackbar success-snackbar">
+        <div class="mdc-snackbar__surface">
+          <div class="mdc-snackbar__label" role="status" aria-live="polite">
+            Merci ! Tu vas recevoir un email avec les instructions.
+          </div>
+        </div>
+      </div>
+
+      <!-- Snackbar pour les messages d'erreur -->
+      <div class="mdc-snackbar error-snackbar">
+        <div class="mdc-snackbar__surface">
+          <div class="mdc-snackbar__label" role="status" aria-live="polite">
+            Désolé, une erreur est survenue. Notre équipe travaille à résoudre le problème.
+          </div>
+          <div class="mdc-snackbar__actions">
+            <button type="button" class="mdc-button mdc-snackbar__action">
+              <div class="mdc-button__ripple"></div>
+              <span class="mdc-button__label">OK</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

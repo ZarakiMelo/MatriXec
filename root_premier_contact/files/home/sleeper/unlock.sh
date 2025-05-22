@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 MATRIX_GREEN='\033[38;5;34m'  # Vert Matrix plus foncé
 NC='\033[0m' # No Color
 
@@ -71,3 +72,12 @@ echo
 
 # Désactiver la couleur
 echo -e "${NC}"
+
+# Renommer l'utilisateur sleeper
+sudo usermod -l "$AGENT_NAME" sleeper
+sudo usermod -d /home/"$AGENT_NAME" -m "$AGENT_NAME"
+sudo groupmod -n "$AGENT_NAME" sleeper
+
+# Changer vers le nouveau répertoire home
+cd /home/"$AGENT_NAME"
+
